@@ -733,21 +733,21 @@
 
       <div class="grid lg:grid-cols-2 gap-8 items-start">
         <div class="glass rounded-[30px] p-6 sm:p-8 reveal">
-          <form class="space-y-4">
+          <form id="contact-form" class="space-y-4">
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-white/75 text-sm mb-2 font-medium">Prénom et nom</label>
-                <input type="text" placeholder="Jean Dupont" class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent-500" />
+                <input id="contact-name" type="text" placeholder="Jean Dupont" class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent-500" />
               </div>
               <div>
-                <label class="block text-white/75 text-sm mb-2 font-medium">Téléphone</label>
-                <input type="tel" placeholder="06 xx xx xx xx" class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent-500" />
+                <label class="block text-white/75 text-sm mb-2 font-medium">Zone d'intervention</label>
+                <input id="contact-zone" type="text" placeholder="Ville / code postal" class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent-500" />
               </div>
             </div>
 
             <div>
               <label class="block text-white/75 text-sm mb-2 font-medium">Type de prestation</label>
-              <select class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-accent-500">
+              <select id="contact-service" class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-accent-500">
                 <option value="" class="bg-slate-900 text-white">Sélectionner un service...</option>
                 <option class="bg-slate-900 text-white">Recherche de fuite</option>
                 <option class="bg-slate-900 text-white">Chauffe-eau</option>
@@ -761,11 +761,11 @@
 
             <div>
               <label class="block text-white/75 text-sm mb-2 font-medium">Votre besoin</label>
-              <textarea rows="5" placeholder="Décrivez votre besoin en quelques lignes..." class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent-500 resize-none"></textarea>
+              <textarea id="contact-message" rows="5" placeholder="Décrivez votre besoin en quelques lignes..." class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent-500 resize-none"></textarea>
             </div>
 
-            <button type="button" class="w-full btn-primary text-white font-bold py-4 rounded-2xl transition-all duration-200">
-              Envoyer ma demande
+            <button type="submit" class="w-full btn-primary text-white font-bold py-4 rounded-2xl transition-all duration-200">
+              Envoyer sur WhatsApp
             </button>
             <p class="text-white/40 text-xs text-center">Réponse rapide · Devis gratuit · Aucun engagement</p>
           </form>
@@ -862,7 +862,7 @@
       <div class="section-divider my-8"></div>
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/45">
-        <p>© 2026 Thévenet Plomberie. Tous droits réservés.</p>
+        <p>© <span id="current-year"></span> Thévenet Plomberie. Tous droits réservés.</p>
       </div>
     </div>
   </footer>
@@ -875,8 +875,11 @@
   </div>
 
   <script>
+    const currentYear = document.getElementById('current-year');
     const navbar = document.getElementById('navbar');
     const reveals = document.querySelectorAll('.reveal');
+
+    if (currentYear) currentYear.textContent = new Date().getFullYear();
 
     // On scroll, add background to navbar (value 40px corresponds to the topbar height)
     window.addEventListener('scroll', () => {
@@ -894,6 +897,31 @@
     }, { threshold: 0.12 });
 
     reveals.forEach(el => observer.observe(el));
+
+    const contactForm = document.getElementById('contact-form');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('contact-name')?.value?.trim() || 'Non renseigné';
+        const zone = document.getElementById('contact-zone')?.value?.trim() || 'Non renseignée';
+        const service = document.getElementById('contact-service')?.value?.trim() || 'Non précisée';
+        const message = document.getElementById('contact-message')?.value?.trim() || 'Aucun détail';
+
+        const whatsappText = [
+          'Bonjour, je souhaite un devis plomberie.',
+          '',
+          `Nom: ${name}`,
+          `Zone d'intervention: ${zone}`,
+          `Prestation: ${service}`,
+          `Besoin: ${message}`
+        ].join('\n');
+
+        const whatsappUrl = `https://wa.me/33695947406?text=${encodeURIComponent(whatsappText)}`;
+        window.open(whatsappUrl, '_blank');
+      });
+    }
   </script>
 </body>
 </html>
