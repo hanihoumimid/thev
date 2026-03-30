@@ -60,7 +60,7 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
     .nav-scrolled {
       background: rgba(15, 23, 42, 0.92) !important;
@@ -165,7 +165,8 @@
     .service-card:hover,
     .feature-card:hover,
     .faq-card:hover,
-    .review-card:hover {
+    .review-card:hover,
+    .realisation-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 18px 45px rgba(15,23,42,0.10);
     }
@@ -173,7 +174,8 @@
     .service-card,
     .feature-card,
     .faq-card,
-    .review-card {
+    .review-card,
+    .realisation-card {
       transition: all .3s ease;
     }
 
@@ -224,6 +226,7 @@
   <nav id="navbar" class="sticky top-0 z-50 transition-all duration-300 w-full -mb-20" style="background: transparent;">    
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="h-20 flex items-center justify-between">
+        
         <a href="#" class="flex items-center gap-3">
           <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center shadow-orange">
             <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5 2c-5.621 0-10.211 4.443-10.475 10h-3.025l5 6.625 5-6.625h-2.975c.257-3.351 3.06-6 6.475-6 3.584 0 6.5 2.916 6.5 6.5s-2.916 6.5-6.5 6.5c-1.863 0-3.542-.793-4.728-2.053l-2.427 3.216c1.877 1.754 4.389 2.837 7.155 2.837 5.79 0 10.5-4.71 10.5-10.5s-4.71-10.5-10.5-10.5z"/></svg>
@@ -236,6 +239,7 @@
 
         <div class="hidden lg:flex items-center gap-7 text-sm text-white/80">
           <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#realisations" class="hover:text-white transition-colors">Réalisations</a>
           <a href="#zones" class="hover:text-white transition-colors">Zones</a>
           <a href="#avis" class="hover:text-white transition-colors">Avis</a>
           <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
@@ -251,10 +255,37 @@
             <span class="hidden sm:inline">06 95 94 74 06</span>
             <span class="sm:hidden">Appeler</span>
           </a>
+          
+          <button id="burger-btn" class="lg:hidden p-2 text-white focus:outline-none transition-transform active:scale-95" aria-label="Ouvrir le menu">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="burger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
         </div>
+
       </div>
     </div>
   </nav>
+
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-slate-900/95 backdrop-blur-xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col pt-32 px-6 pb-6 lg:hidden">
+    <div class="flex flex-col gap-2">
+      <a href="#services" class="mobile-link text-2xl font-bold text-white py-3 border-b border-white/10">Services</a>
+      <a href="#realisations" class="mobile-link text-2xl font-bold text-white py-3 border-b border-white/10">Réalisations</a>
+      <a href="#zones" class="mobile-link text-2xl font-bold text-white py-3 border-b border-white/10">Zone d'intervention</a>
+      <a href="#avis" class="mobile-link text-2xl font-bold text-white py-3 border-b border-white/10">Avis clients</a>
+      <a href="#faq" class="mobile-link text-2xl font-bold text-white py-3 border-b border-white/10">FAQ</a>
+    </div>
+    
+    <div class="mt-auto flex flex-col gap-4">
+      <a href="#contact" class="mobile-link w-full text-center bg-white/10 border border-white/20 text-white py-4 rounded-2xl font-bold">
+        Demander un devis en ligne
+      </a>
+      <a href="tel:0695947406" class="w-full text-center btn-primary text-white py-4 rounded-2xl font-bold shadow-orange flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        06 95 94 74 06
+      </a>
+    </div>
+  </div>
 
   <header class="hero-bg relative overflow-hidden pt-28 sm:pt-32">
     <div class="absolute inset-0 grid-pattern opacity-30"></div>
@@ -487,6 +518,85 @@
             Installation et entretien de systèmes VMC pour améliorer la qualité de l'air de votre intérieur, et prise en charge globale d’équipements liés à l’eau et à la salle de bain.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="realisations" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+        <span class="inline-flex items-center rounded-full bg-brand-50 text-brand-700 text-sm font-semibold px-4 py-2 mb-4">Nos réalisations</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Des chantiers concrets, des résultats durables</h2>
+        <p class="text-slate-600">
+          Chaque intervention est différente. Découvrez quelques exemples en images de réparations et installations effectuées dans le Rhône.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <article class="realisation-card premium-card rounded-3xl p-3 flex flex-col h-full reveal group overflow-hidden cursor-pointer">
+          <div class="h-48 sm:h-56 w-full rounded-2xl overflow-hidden mb-4 bg-slate-100">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600" alt="Salle de bain moderne plomberie" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          </div>
+          <div class="px-2 flex-grow flex flex-col">
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-flex items-center rounded-full bg-blue-50 text-brand-700 text-[11px] uppercase tracking-wider font-bold px-3 py-1">Salle de bain</span>
+              <span class="text-xs text-slate-400 font-medium">Saint-Didier</span>
+            </div>
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Installation d'une douche à l'italienne</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Création des arrivées d'eau, pose du receveur extra-plat et installation de la robinetterie encastrée. Étanchéité garantie.
+            </p>
+          </div>
+          <div class="mt-auto px-2 pb-2">
+            <div class="rounded-xl bg-slate-50 border border-slate-100 p-3 text-sm text-slate-700 font-medium text-center">
+              Chantier livré clé en main
+            </div>
+          </div>
+        </article>
+
+        <article class="realisation-card premium-card rounded-3xl p-3 flex flex-col h-full reveal group overflow-hidden cursor-pointer" style="transition-delay: 100ms;">
+          <div class="h-48 sm:h-56 w-full rounded-2xl overflow-hidden mb-4 bg-slate-100">
+             <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=600" alt="Remplacement d'un cumulus" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+          </div>
+          <div class="px-2 flex-grow flex flex-col">
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-flex items-center rounded-full bg-orange-50 text-accent-600 text-[11px] uppercase tracking-wider font-bold px-3 py-1">Chauffe-eau</span>
+              <span class="text-xs text-slate-400 font-medium">Lyon 9e</span>
+            </div>
+            <h3 class="font-bold text-lg text-slate-900 mb-2">Remplacement d'un chauffe-eau 200L</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Vidange et dépose de l'ancien appareil percé. Pose du nouveau cumulus thermodynamique avec vérification complète du groupe de sécurité.
+            </p>
+          </div>
+          <div class="mt-auto px-2 pb-2">
+            <div class="rounded-xl bg-slate-50 border border-slate-100 p-3 text-sm text-slate-700 font-medium text-center">
+              Intervention en 24h
+            </div>
+          </div>
+        </article>
+
+        <article class="realisation-card premium-card rounded-3xl p-3 flex flex-col h-full reveal group overflow-hidden cursor-pointer" style="transition-delay: 200ms;">
+  <div class="h-48 sm:h-56 w-full rounded-2xl overflow-hidden mb-4 bg-slate-100">
+    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=600" alt="Réparation fuite lavabo plomberie" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+  </div>
+  <div class="px-2 flex-grow flex flex-col">
+    <div class="flex items-center justify-between mb-3">
+      <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 text-[11px] uppercase tracking-wider font-bold px-3 py-1">Dépannage</span>
+      <span class="text-xs text-slate-400 font-medium">Écully</span>
+    </div>
+    <h3 class="font-bold text-lg text-slate-900 mb-2">Recherche et réparation de fuite</h3>
+    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+      Intervention d'urgence sur un tuyau d'évacuation endommagé sous le lavabo. Remplacement des siphons et des flexibles usés.
+    </p>
+  </div>
+  <div class="mt-auto px-2 pb-2">
+    <div class="rounded-xl bg-slate-50 border border-slate-100 p-3 text-sm text-slate-700 font-medium text-center">
+      Dégât des eaux évité
+    </div>
+  </div>
+</article>
+
       </div>
     </div>
   </section>
@@ -739,9 +849,21 @@
                 <label class="block text-white/75 text-sm mb-2 font-medium">Prénom et nom</label>
                 <input id="contact-name" type="text" placeholder="Jean Dupont" class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent-500" />
               </div>
-              <div>
+<div>
                 <label class="block text-white/75 text-sm mb-2 font-medium">Zone d'intervention</label>
-                <input id="contact-zone" type="text" placeholder="Ville / code postal" class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent-500" />
+                <select id="contact-zone" class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-accent-500">
+                  <option value="" class="bg-slate-900 text-white">Sélectionner votre ville...</option>
+                  <option class="bg-slate-900 text-white">Saint-Didier-au-Mont-d'Or</option>
+                  <option class="bg-slate-900 text-white">Saint-Cyr-au-Mont-d'Or</option>
+                  <option class="bg-slate-900 text-white">Champagne-au-Mont-d'Or</option>
+                  <option class="bg-slate-900 text-white">Collonges-au-Mont-d'Or</option>
+                  <option class="bg-slate-900 text-white">Limonest</option>
+                  <option class="bg-slate-900 text-white">Écully</option>
+                  <option class="bg-slate-900 text-white">Dardilly</option>
+                  <option class="bg-slate-900 text-white">Caluire-et-Cuire</option>
+                  <option class="bg-slate-900 text-white">Lyon (tous arrondissements)</option>
+                  <option class="bg-slate-900 text-white">Autre commune (préciser en dessous)</option>
+                </select>
               </div>
             </div>
 
@@ -842,6 +964,7 @@
           <h3 class="font-bold mb-4">Navigation</h3>
           <ul class="space-y-2 text-sm text-white/65">
             <li><a href="#services" class="hover:text-white">Nos services</a></li>
+            <li><a href="#realisations" class="hover:text-white">Nos réalisations</a></li>
             <li><a href="#zones" class="hover:text-white">Zone d’intervention</a></li>
             <li><a href="#avis" class="hover:text-white">Avis clients</a></li>
             <li><a href="#faq" class="hover:text-white">Questions fréquentes</a></li>
@@ -863,6 +986,7 @@
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/45">
         <p>© <span id="current-year"></span> Thévenet Plomberie. Tous droits réservés.</p>
+        <p>Site vitrine artisan plombier · Rhône</p>
       </div>
     </div>
   </footer>
@@ -878,10 +1002,15 @@
     const currentYear = document.getElementById('current-year');
     const navbar = document.getElementById('navbar');
     const reveals = document.querySelectorAll('.reveal');
+    const burgerBtn = document.getElementById('burger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const burgerIcon = document.getElementById('burger-icon');
 
+    // Année dynamique
     if (currentYear) currentYear.textContent = new Date().getFullYear();
 
-    // On scroll, add background to navbar (value 40px corresponds to the topbar height)
+    // Scroll Navbar
     window.addEventListener('scroll', () => {
       if (window.scrollY > 40) {
         navbar.classList.add('nav-scrolled');
@@ -890,6 +1019,7 @@
       }
     });
 
+    // Reveal Animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('show');
@@ -898,6 +1028,31 @@
 
     reveals.forEach(el => observer.observe(el));
 
+    // Menu Burger
+    let menuOpen = false;
+
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        mobileMenu.classList.remove('translate-x-full');
+        burgerIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Croix
+        document.body.style.overflow = 'hidden'; // Empêche le scroll en arrière-plan
+      } else {
+        mobileMenu.classList.add('translate-x-full');
+        burgerIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7'); // Hamburger
+        document.body.style.overflow = '';
+      }
+    }
+
+    burgerBtn.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (menuOpen) toggleMenu();
+      });
+    });
+
+    // Formulaire WhatsApp
     const contactForm = document.getElementById('contact-form');
 
     if (contactForm) {
