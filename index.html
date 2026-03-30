@@ -159,22 +159,8 @@
       50% { box-shadow: 0 0 0 10px rgba(34,197,94,0); }
     }
 
-    @keyframes shine {
-      0% { background-position: 200% center; }
-      100% { background-position: -200% center; }
-    }
-
     .float-soft { animation: floatY 4s ease-in-out infinite; }
     .pulse-soft { animation: pulseSoft 2s infinite; }
-
-    .shine-text {
-      background: linear-gradient(90deg, #ffffff 0%, #dbeafe 30%, #ffffff 60%, #fed7aa 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: shine 5s linear infinite;
-    }
 
     .service-card:hover,
     .feature-card:hover,
@@ -217,50 +203,11 @@
       }
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Plumber",
-    "name":"Thévenet Plomberie",
-    "image":"https://thevenet-plomberie.fr/og-image.jpg",
-    "url":"https://thevenet-plomberie.fr/",
-    "telephone":"+33695947406",
-    "priceRange":"€€",
-    "description":"Artisan plombier à Saint-Didier-au-Mont-d'Or. Dépannage rapide, recherche de fuite, chauffe-eau, douche, robinetterie, WC et VMC.",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"12 Avenue Jean Jaurès",
-      "addressLocality":"Saint-Didier-au-Mont-d'Or",
-      "postalCode":"69370",
-      "addressCountry":"FR"
-    },
-    "geo":{
-      "@type":"GeoCoordinates",
-      "latitude":"45.8100",
-      "longitude":"4.7970"
-    },
-    "openingHoursSpecification":[
-      {
-        "@type":"OpeningHoursSpecification",
-        "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens":"08:00",
-        "closes":"19:00"
-      }
-    ],
-    "areaServed":["Saint-Didier-au-Mont-d'Or","Lyon","Rhône"],
-    "aggregateRating":{
-      "@type":"AggregateRating",
-      "ratingValue":"4.3",
-      "reviewCount":"9"
-    }
-  }
-  </script>
 </head>
 
-<body class="bg-white text-slate-900 antialiased">
+<body class="bg-white text-slate-900 antialiased relative">
 
-  <div class="bg-slate-950 text-white text-xs sm:text-sm">
+  <div class="bg-slate-950 text-white text-xs sm:text-sm relative z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2">
       <div class="flex items-center gap-2 text-white/85">
         <span class="w-2.5 h-2.5 rounded-full bg-green-400 pulse-soft"></span>
@@ -274,7 +221,7 @@
     </div>
   </div>
 
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: transparent;">
+  <nav id="navbar" class="sticky top-0 z-50 transition-all duration-300 w-full -mb-20" style="background: transparent;">    
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="h-20 flex items-center justify-between">
         <a href="#" class="flex items-center gap-3">
@@ -283,7 +230,7 @@
           </div>
           <div>
             <p class="text-white font-extrabold leading-none tracking-tight">Thévenet <span class="text-accent-400">Plomberie</span></p>
-            <p class="text-white/60 text-xs mt-1">Artisan plombier · Rhône</p>
+            <p class="text-white/60 text-xs mt-1">Artisan plombier</p>
           </div>
         </a>
 
@@ -316,40 +263,26 @@
       <div class="absolute bottom-8 right-[-60px] w-72 h-72 bg-orange-400/20 blur-3xl rounded-full"></div>
     </div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pb-20 sm:pb-24">
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pb-16 sm:pb-24">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+        
         <div class="text-white reveal">
           <div class="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm text-white/90 mb-6">
             <span class="w-2.5 h-2.5 rounded-full bg-green-400 pulse-soft"></span>
-            Intervention rapide · Rhône · Devis gratuit
+            Intervention rapide · Rhône
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-5">
             Votre plombier
             <span class="hero-highlight">de confiance</span>
-            à Saint-Didier-au-Mont-d'Or
+            à Saint-Didier
           </h1>
 
-          <p class="text-base sm:text-lg text-white/75 max-w-2xl leading-relaxed mb-8">
-            Thévenet Plomberie intervient pour les fuites, chauffe-eaux, robinets, WC, douches, tuyaux et dépannages du quotidien. Une landing page artisan doit rassurer, être claire et convertir rapidement sur mobile : cette version est pensée dans ce sens [file:16].
+          <p class="text-base sm:text-lg text-white/75 max-w-xl leading-relaxed mb-8">
+            Thévenet Plomberie intervient rapidement pour tous vos dépannages : fuites, chauffe-eau, robinetterie et canalisations. Profitez d'un service de qualité, transparent et de proximité.
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-8">
-            <div class="glass rounded-2xl px-4 py-3">
-              <p class="text-white font-extrabold text-lg">4.3/5</p>
-              <p class="text-white/65 text-sm">Avis Google</p>
-            </div>
-            <div class="glass rounded-2xl px-4 py-3">
-              <p class="text-white font-extrabold text-lg">Devis gratuit</p>
-              <p class="text-white/65 text-sm">Sans engagement</p>
-            </div>
-            <div class="glass rounded-2xl px-4 py-3">
-              <p class="text-white font-extrabold text-lg">Lun–Ven</p>
-              <p class="text-white/65 text-sm">8h00 à 19h00</p>
-            </div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row gap-3 mb-8">
+          <div class="flex flex-col sm:flex-row gap-3 mb-6">
             <a href="tel:0695947406" class="btn-primary text-white font-bold text-base sm:text-lg px-7 py-4 rounded-2xl text-center transition-all duration-200">
               Appeler maintenant
             </a>
@@ -363,54 +296,51 @@
               <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star opacity-60">★</span>
               <span>9 avis vérifiés</span>
             </div>
-            <span>•</span>
-            <span>Particuliers & professionnels</span>
-            <span>•</span>
-            <span>Tarifs transparents</span>
+            <span class="hidden sm:inline">•</span>
+            <span class="hidden sm:inline">Particuliers & professionnels</span>
           </div>
         </div>
 
-        <div class="reveal">
+        <div class="reveal mt-4 lg:mt-0">
           <div class="relative max-w-xl mx-auto">
-            <div class="absolute -top-5 -right-3 glass-light rounded-2xl px-4 py-3 shadow-soft hidden sm:flex items-center gap-2">
+            <div class="absolute -top-5 -right-3 z-20 glass-light rounded-2xl px-4 py-3 shadow-soft hidden sm:flex items-center gap-2">
               <span class="star">★</span>
               <span class="text-slate-800 font-bold text-sm">4.3 Google</span>
             </div>
 
-            <div class="glass rounded-[28px] p-5 sm:p-6 shadow-glow float-soft">
+            <div class="glass relative z-10 rounded-[28px] p-4 sm:p-6 shadow-glow lg:float-soft">
               <div class="grid gap-4">
-                <div class="rounded-3xl bg-white/10 p-5 border border-white/10">
-                  <div class="flex items-center gap-4">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center shadow-orange">
-                      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5 2c-5.621 0-10.211 4.443-10.475 10h-3.025l5 6.625 5-6.625h-2.975c.257-3.351 3.06-6 6.475-6 3.584 0 6.5 2.916 6.5 6.5s-2.916 6.5-6.5 6.5c-1.863 0-3.542-.793-4.728-2.053l-2.427 3.216c1.877 1.754 4.389 2.837 7.155 2.837 5.79 0 10.5-4.71 10.5-10.5s-4.71-10.5-10.5-10.5z"/></svg>
-                    </div>
-                    <div>
-                      <p class="text-white font-bold text-xl">Patrick Thévenet</p>
-                      <p class="text-white/60 text-sm">Artisan plombier · Rhône (69)</p>
-                    </div>
+                
+                <div class="rounded-3xl bg-white/10 p-4 sm:p-5 border border-white/10 flex items-center gap-4">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center shadow-orange flex-shrink-0">
+                    <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5 2c-5.621 0-10.211 4.443-10.475 10h-3.025l5 6.625 5-6.625h-2.975c.257-3.351 3.06-6 6.475-6 3.584 0 6.5 2.916 6.5 6.5s-2.916 6.5-6.5 6.5c-1.863 0-3.542-.793-4.728-2.053l-2.427 3.216c1.877 1.754 4.389 2.837 7.155 2.837 5.79 0 10.5-4.71 10.5-10.5s-4.71-10.5-10.5-10.5z"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-white font-bold text-lg sm:text-xl">Patrick Thévenet</p>
+                    <p class="text-white/60 text-sm">Artisan plombier · Rhône (69)</p>
                   </div>
                 </div>
 
-                <div class="grid sm:grid-cols-2 gap-3">
+                <div class="hidden sm:grid sm:grid-cols-2 gap-3">
                   <div class="bg-white rounded-2xl p-4">
                     <p class="font-bold text-slate-900 mb-1">Fuite d'eau</p>
-                    <p class="text-sm text-slate-500">Détection et réparation rapide</p>
+                    <p class="text-xs text-slate-500">Détection et réparation</p>
                   </div>
                   <div class="bg-white rounded-2xl p-4">
                     <p class="font-bold text-slate-900 mb-1">Chauffe-eau</p>
-                    <p class="text-sm text-slate-500">Pose, remplacement, dépannage</p>
+                    <p class="text-xs text-slate-500">Pose et dépannage</p>
                   </div>
                   <div class="bg-white rounded-2xl p-4">
-                    <p class="font-bold text-slate-900 mb-1">WC & robinetterie</p>
-                    <p class="text-sm text-slate-500">Réparation ou installation</p>
+                    <p class="font-bold text-slate-900 mb-1">Robinetterie</p>
+                    <p class="text-xs text-slate-500">Réparation ou installation</p>
                   </div>
                   <div class="bg-white rounded-2xl p-4">
                     <p class="font-bold text-slate-900 mb-1">Salle de bain</p>
-                    <p class="text-sm text-slate-500">Douche, équipements, finitions</p>
+                    <p class="text-xs text-slate-500">Équipements, finitions</p>
                   </div>
                 </div>
 
-                <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                <div class="hidden sm:block bg-white/10 rounded-2xl p-4 border border-white/10">
                   <div class="space-y-3 text-white/85 text-sm">
                     <div class="flex items-center gap-3">
                       <span class="w-8 h-8 rounded-xl bg-green-500/20 flex items-center justify-center">
@@ -424,40 +354,34 @@
                       </span>
                       Devis gratuit sans engagement
                     </div>
-                    <div class="flex items-center gap-3">
-                      <span class="w-8 h-8 rounded-xl bg-green-500/20 flex items-center justify-center">
-                        <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                      </span>
-                      Explications claires et tarifs corrects
-                    </div>
                   </div>
-
                   <a href="tel:0695947406" class="mt-5 block w-full text-center btn-primary text-white font-bold py-3.5 rounded-xl transition-all duration-200">
                     ☎ 06 95 94 74 06
                   </a>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 reveal">
-        <div class="premium-card rounded-2xl p-5 text-center">
-          <p class="text-3xl font-black text-brand-700">4.3<span class="text-accent-500">★</span></p>
-          <p class="text-sm text-slate-500 mt-1">Note Google</p>
+      <div class="mt-8 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 reveal">
+        <div class="premium-card rounded-2xl p-4 sm:p-5 text-center">
+          <p class="text-2xl sm:text-3xl font-black text-brand-700">4.3<span class="text-accent-500">★</span></p>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">Note Google</p>
         </div>
-        <div class="premium-card rounded-2xl p-5 text-center">
-          <p class="text-3xl font-black text-brand-700">5.0</p>
-          <p class="text-sm text-slate-500 mt-1">PagesJaunes</p>
+        <div class="premium-card rounded-2xl p-4 sm:p-5 text-center">
+          <p class="text-2xl sm:text-3xl font-black text-brand-700">5.0</p>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">PagesJaunes</p>
         </div>
-        <div class="premium-card rounded-2xl p-5 text-center">
-          <p class="text-3xl font-black text-brand-700">11</p>
-          <p class="text-sm text-slate-500 mt-1">Prestations</p>
+        <div class="premium-card rounded-2xl p-4 sm:p-5 text-center">
+          <p class="text-2xl sm:text-3xl font-black text-brand-700">11</p>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">Prestations</p>
         </div>
-        <div class="premium-card rounded-2xl p-5 text-center">
-          <p class="text-3xl font-black text-brand-700">69</p>
-          <p class="text-sm text-slate-500 mt-1">Département couvert</p>
+        <div class="premium-card rounded-2xl p-4 sm:p-5 text-center">
+          <p class="text-2xl sm:text-3xl font-black text-brand-700">69</p>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">Dép. couvert</p>
         </div>
       </div>
     </div>
@@ -466,10 +390,10 @@
   <section class="py-16 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-3xl mx-auto mb-12 reveal">
-        <span class="inline-flex items-center rounded-full bg-brand-50 text-brand-700 text-sm font-semibold px-4 py-2 mb-4">Une landing page pensée pour convertir</span>
-        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 mb-4">Pourquoi cette version fonctionne mieux ?</h2>
+        <span class="inline-flex items-center rounded-full bg-brand-50 text-brand-700 text-sm font-semibold px-4 py-2 mb-4">Notre engagement qualité</span>
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 mb-4">Pourquoi choisir Thévenet Plomberie ?</h2>
         <p class="text-slate-600 leading-relaxed">
-          Une landing page premium pour un plombier doit avant tout être claire, locale, rapide à parcourir, rassurante sur mobile et structurée pour le SEO. Le fichier d’origine montrait déjà une base sérieuse, mais cette version ajoute plus de lisibilité, de sections et de profondeur visuelle [file:16].
+          Artisan plombier de proximité, nous mettons un point d'honneur à vous offrir un service transparent, rapide et soigné. Chaque intervention est précédée d'un diagnostic clair et d'un devis détaillé pour éviter toute mauvaise surprise.
         </p>
       </div>
 
@@ -478,24 +402,24 @@
           <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center mb-4">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-          <h3 class="font-bold text-lg mb-2">Conversion immédiate</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Téléphone visible, CTA clairs, informations utiles au premier écran, sections rassurantes et lecture fluide sur smartphone.</p>
+          <h3 class="font-bold text-lg mb-2">Intervention rapide</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Une fuite ou une panne d'eau chaude n'attend pas. Nous intervenons dans les meilleurs délais pour sécuriser votre installation.</p>
         </div>
 
         <div class="feature-card premium-card rounded-3xl p-6 reveal">
           <div class="w-12 h-12 rounded-2xl bg-orange-100 text-accent-600 flex items-center justify-center mb-4">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
-          <h3 class="font-bold text-lg mb-2">Crédibilité locale</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Adresse, horaires, témoignages, zone d’intervention et carte intégrée améliorent la confiance et renforcent la présence locale.</p>
+          <h3 class="font-bold text-lg mb-2">Artisan de confiance</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Implantés localement, nous privilégions la relation de confiance, la qualité du travail bien fait et les réparations durables.</p>
         </div>
 
         <div class="feature-card premium-card rounded-3xl p-6 reveal">
           <div class="w-12 h-12 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center mb-4">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M12 4h9"/><path d="M4 9h16"/><path d="M4 15h16"/></svg>
           </div>
-          <h3 class="font-bold text-lg mb-2">SEO plus solide</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Titres clairs, mots-clés locaux, contenu de service, structure FAQ et données schema renforcent l’indexation et la pertinence.</p>
+          <h3 class="font-bold text-lg mb-2">Transparence totale</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Pas de frais cachés. Un devis gratuit et détaillé vous est toujours présenté avant le début des travaux ou réparations.</p>
         </div>
       </div>
     </div>
@@ -504,10 +428,10 @@
   <section id="services" class="py-16 sm:py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-3xl mx-auto mb-12 reveal">
-        <span class="inline-flex items-center rounded-full bg-white text-brand-700 border border-brand-100 text-sm font-semibold px-4 py-2 mb-4">Prestations</span>
+        <span class="inline-flex items-center rounded-full bg-white text-brand-700 border border-brand-100 text-sm font-semibold px-4 py-2 mb-4">Nos services</span>
         <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Tous vos besoins en plomberie</h2>
         <p class="text-slate-600">
-          Cette section de services renforce la couverture SEO sur les recherches métier, tout en rendant l’offre compréhensible en quelques secondes sur mobile [file:16].
+          Découvrez l'ensemble de nos prestations. Que ce soit pour une urgence ou un projet de rénovation, nous vous accompagnons de A à Z.
         </p>
       </div>
 
@@ -538,7 +462,7 @@
 
         <div class="service-card premium-card rounded-3xl p-6 reveal">
           <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-700 flex items-center justify-center mb-4">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 4a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 8a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2zm8-8a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1V4zm0 8a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1v-2z"/></svg>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 4a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 8a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1V4zm0 8a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1v-2zm8-8a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1V4zm0 8a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 01-1 1h-2a1 1 0 01-1-1v-2z"/></svg>
           </div>
           <h3 class="font-bold text-lg mb-2">WC & robinetterie</h3>
           <p class="text-slate-600 text-sm">Installation, remplacement et réparation de WC, mitigeurs, robinets et mécanismes.</p>
@@ -550,7 +474,7 @@
           </div>
           <h3 class="font-bold text-lg mb-2">Dépannage plomberie</h3>
           <p class="text-slate-600 text-sm leading-relaxed">
-            Fuite, robinet cassé, WC qui ne fonctionne plus, bruit de tuyauterie, écoulement anormal ou panne de chauffe-eau : la landing page doit faire remonter ce type d’intention tout en rassurant l’utilisateur sur la rapidité d’intervention [file:16].
+            Fuite, robinet cassé, WC bouché, bruit de tuyauterie ou écoulement anormal : nous intervenons rapidement pour identifier la cause de la panne, sécuriser votre habitation et réparer votre installation.
           </p>
         </div>
 
@@ -560,7 +484,7 @@
           </div>
           <h3 class="font-bold text-lg mb-2">VMC & équipements</h3>
           <p class="text-slate-600 text-sm leading-relaxed">
-            Installation de VMC, amélioration du confort intérieur et prise en charge d’équipements liés à l’eau et à la salle de bain.
+            Installation et entretien de systèmes VMC pour améliorer la qualité de l'air de votre intérieur, et prise en charge globale d’équipements liés à l’eau et à la salle de bain.
           </p>
         </div>
       </div>
@@ -576,7 +500,7 @@
             <p class="text-white/70 font-semibold mb-3">Besoin d'un artisan sérieux ?</p>
             <h2 class="text-3xl sm:text-4xl font-black leading-tight mb-4">Un problème de plomberie n’attend pas.</h2>
             <p class="text-white/80 leading-relaxed mb-6">
-              Appel direct, devis gratuit, réponses claires et intervention dans les meilleurs délais selon disponibilité. Une bonne landing page de plombier doit pousser à l’action sans perdre l’utilisateur dans trop de friction [file:16].
+              Ne laissez pas un dégât des eaux s'aggraver. Contactez-nous dès maintenant pour une prise en charge rapide. Nous évaluons la situation avec vous et planifions une intervention dans les meilleurs délais.
             </p>
             <div class="flex flex-col sm:flex-row gap-3">
               <a href="tel:0695947406" class="inline-flex items-center justify-center rounded-2xl bg-white text-brand-700 font-black px-8 py-4 transition hover:-translate-y-0.5">
@@ -614,7 +538,7 @@
           <span class="inline-flex items-center rounded-full bg-white text-brand-700 border border-brand-100 text-sm font-semibold px-4 py-2 mb-4">Zone d’intervention</span>
           <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Plombier local dans le Rhône</h2>
           <p class="text-slate-600 leading-relaxed mb-6">
-            Le contenu local aide au référencement naturel, surtout lorsqu’il est lié à l’adresse, aux communes desservies et à la carte. L’ajout d’une iframe améliore aussi la crédibilité perçue pour un artisan de proximité [file:16].
+            Nous intervenons rapidement à Saint-Didier-au-Mont-d'Or et dans les communes limitrophes pour être toujours au plus près de vous. Notre proximité nous permet d'être très réactifs en cas d'urgence.
           </p>
 
           <div class="grid sm:grid-cols-2 gap-4">
@@ -636,7 +560,7 @@
               loading="lazy"
               allowfullscreen
               referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=12%20Avenue%20Jean%20Jaur%C3%A8s%2C%2069370%20Saint-Didier-au-Mont-d'Or&z=15&output=embed">
+              src="https://maps.google.com/maps?q=12%20Avenue%20Jean%20Jaur%C3%A8s,%2069370%20Saint-Didier-au-Mont-d'Or&t=&z=13&ie=UTF8&iwloc=&output=embed">
             </iframe>
           </div>
         </div>
@@ -648,9 +572,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-3xl mx-auto mb-12 reveal">
         <span class="inline-flex items-center rounded-full bg-yellow-50 text-yellow-700 text-sm font-semibold px-4 py-2 mb-4">Témoignages</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Ce que disent les clients</h2>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Ce que disent nos clients</h2>
         <p class="text-slate-600">
-          Les avis sont essentiels sur une landing page artisan, car ils répondent immédiatement au besoin de réassurance avant l’appel ou la demande de devis [file:16].
+          La satisfaction de nos clients est notre meilleure priorité. Découvrez les retours d'expérience de ceux qui nous ont fait confiance pour leurs travaux.
         </p>
       </div>
 
@@ -666,7 +590,7 @@
             <div class="w-10 h-10 rounded-full bg-brand-700 text-white flex items-center justify-center font-bold">A</div>
             <div>
               <p class="font-semibold text-slate-900 text-sm">Anne-Sophie J.</p>
-              <p class="text-slate-400 text-xs">Google</p>
+              <p class="text-slate-400 text-xs">Avis Google</p>
             </div>
           </div>
         </div>
@@ -682,7 +606,7 @@
             <div class="w-10 h-10 rounded-full bg-accent-500 text-white flex items-center justify-center font-bold">D</div>
             <div>
               <p class="font-semibold text-slate-900 text-sm">Dan N.</p>
-              <p class="text-slate-400 text-xs">Google</p>
+              <p class="text-slate-400 text-xs">Avis Google</p>
             </div>
           </div>
         </div>
@@ -719,12 +643,12 @@
             <div class="flex justify-center md:justify-start gap-1 my-2">
               <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
             </div>
-            <p class="text-sm text-slate-500">PagesJaunes</p>
+            <p class="text-sm text-slate-500">Note PagesJaunes</p>
           </div>
 
           <div class="text-center md:text-right">
             <p class="text-slate-700 font-medium">“Enfin un plombier à qui faire confiance.”</p>
-            <p class="text-xs text-slate-400 mt-1">Avis client</p>
+            <p class="text-xs text-slate-400 mt-1">Commentaire client</p>
           </div>
         </div>
       </div>
@@ -734,10 +658,10 @@
   <section class="py-16 sm:py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-3xl mx-auto mb-12 reveal">
-        <span class="inline-flex items-center rounded-full bg-white text-brand-700 border border-brand-100 text-sm font-semibold px-4 py-2 mb-4">Méthode</span>
+        <span class="inline-flex items-center rounded-full bg-white text-brand-700 border border-brand-100 text-sm font-semibold px-4 py-2 mb-4">Méthodologie</span>
         <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Comment se passe l’intervention ?</h2>
         <p class="text-slate-600">
-          Ajouter une section de process rend la page plus concrète et aide les visiteurs à se projeter avant de prendre contact.
+          Pour vous garantir une prestation sans surprise, nous suivons un processus clair et transparent à chaque étape.
         </p>
       </div>
 
@@ -745,19 +669,19 @@
         <div class="feature-card premium-card rounded-3xl p-6 reveal">
           <div class="w-12 h-12 rounded-2xl bg-brand-700 text-white flex items-center justify-center font-black mb-4">1</div>
           <h3 class="font-bold text-lg mb-2">Vous appelez ou laissez un message</h3>
-          <p class="text-slate-600 text-sm">Expliquez brièvement votre besoin, la panne ou le projet concerné.</p>
+          <p class="text-slate-600 text-sm">Expliquez-nous brièvement votre besoin, la panne ou le projet concerné afin que nous puissions évaluer l'urgence.</p>
         </div>
 
         <div class="feature-card premium-card rounded-3xl p-6 reveal">
           <div class="w-12 h-12 rounded-2xl bg-brand-700 text-white flex items-center justify-center font-black mb-4">2</div>
           <h3 class="font-bold text-lg mb-2">Analyse et proposition</h3>
-          <p class="text-slate-600 text-sm">Une solution claire est proposée, avec devis gratuit selon la demande.</p>
+          <p class="text-slate-600 text-sm">Une solution claire vous est proposée. Si nécessaire, un devis gratuit et détaillé est édité avant toute intervention.</p>
         </div>
 
         <div class="feature-card premium-card rounded-3xl p-6 reveal">
           <div class="w-12 h-12 rounded-2xl bg-brand-700 text-white flex items-center justify-center font-black mb-4">3</div>
           <h3 class="font-bold text-lg mb-2">Intervention et remise en état</h3>
-          <p class="text-slate-600 text-sm">L’objectif est d’intervenir proprement, efficacement et de manière durable.</p>
+          <p class="text-slate-600 text-sm">Nous procédons aux travaux de façon professionnelle et soignée. L’objectif est d’intervenir proprement, efficacement et durablement.</p>
         </div>
       </div>
     </div>
@@ -766,32 +690,32 @@
   <section id="faq" class="py-16 sm:py-20 bg-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-3xl mx-auto mb-12 reveal">
-        <span class="inline-flex items-center rounded-full bg-brand-50 text-brand-700 text-sm font-semibold px-4 py-2 mb-4">FAQ SEO</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Questions fréquentes</h2>
+        <span class="inline-flex items-center rounded-full bg-brand-50 text-brand-700 text-sm font-semibold px-4 py-2 mb-4">Questions fréquentes</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Vos interrogations</h2>
         <p class="text-slate-600">
-          La FAQ est utile à la fois pour l’utilisateur et pour le SEO, car elle couvre des requêtes locales et transactionnelles courantes sur une page service [file:16].
+          Vous avez des questions sur nos interventions ? Voici les réponses aux demandes les plus courantes de nos clients.
         </p>
       </div>
 
       <div class="space-y-4">
         <div class="faq-card premium-card rounded-3xl p-6 reveal">
           <h3 class="font-bold text-lg text-slate-900 mb-2">Intervenez-vous à Saint-Didier-au-Mont-d'Or ?</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Oui, Thévenet Plomberie intervient à Saint-Didier-au-Mont-d'Or ainsi que dans le Rhône selon la nature de la demande.</p>
+          <p class="text-slate-600 text-sm leading-relaxed">Oui, Thévenet Plomberie est basé localement et intervient très régulièrement à Saint-Didier-au-Mont-d'Or ainsi que dans le Rhône selon la nature de la demande.</p>
         </div>
 
         <div class="faq-card premium-card rounded-3xl p-6 reveal">
-          <h3 class="font-bold text-lg text-slate-900 mb-2">Faites-vous les dépannages en plomberie ?</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Oui, pour les fuites, robinetteries, WC, chauffe-eaux, canalisations et autres problèmes de plomberie du quotidien.</p>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">Faites-vous les dépannages d'urgence en plomberie ?</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Absolument. Nous sommes formés pour diagnostiquer et réparer rapidement les fuites, robinetteries endommagées, WC bouchés, pannes de chauffe-eaux et autres soucis du quotidien.</p>
         </div>
 
         <div class="faq-card premium-card rounded-3xl p-6 reveal">
           <h3 class="font-bold text-lg text-slate-900 mb-2">Le devis est-il gratuit ?</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Oui, la page met en avant un devis gratuit sans engagement, ce qui est un élément de conversion important pour un artisan local [file:16].</p>
+          <p class="text-slate-600 text-sm leading-relaxed">Oui, nous vous fournissons un devis gratuit et détaillé avant chaque intervention, afin de vous garantir une totale transparence sur les tarifs et sans aucun engagement de votre part.</p>
         </div>
 
         <div class="faq-card premium-card rounded-3xl p-6 reveal">
           <h3 class="font-bold text-lg text-slate-900 mb-2">Travaillez-vous pour les particuliers et les professionnels ?</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Oui, l’activité s’adresse aux particuliers comme aux professionnels, avec une approche sérieuse et claire.</p>
+          <p class="text-slate-600 text-sm leading-relaxed">Oui, l’activité s’adresse aussi bien aux particuliers pour leur logement, qu'aux professionnels pour leurs bureaux ou locaux commerciaux.</p>
         </div>
       </div>
     </div>
@@ -803,7 +727,7 @@
         <span class="inline-flex items-center rounded-full bg-white/10 text-white text-sm font-semibold px-4 py-2 mb-4">Contact</span>
         <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Demande de devis gratuit</h2>
         <p class="text-white/65">
-          Une section contact mobile-first doit être simple, rapide à remplir et renforcée par des informations visibles immédiatement [file:16].
+          Remplissez le formulaire ci-dessous en nous décrivant brièvement votre problème ou votre projet. Nous vous recontacterons très rapidement pour vous proposer une solution.
         </p>
       </div>
 
@@ -824,14 +748,14 @@
             <div>
               <label class="block text-white/75 text-sm mb-2 font-medium">Type de prestation</label>
               <select class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-accent-500">
-                <option value="" style="color:#111">Sélectionner un service...</option>
-                <option style="color:#111">Recherche de fuite</option>
-                <option style="color:#111">Chauffe-eau</option>
-                <option style="color:#111">Douche / salle de bain</option>
-                <option style="color:#111">WC / robinetterie</option>
-                <option style="color:#111">Dépannage plomberie</option>
-                <option style="color:#111">VMC</option>
-                <option style="color:#111">Autre</option>
+                <option value="" class="bg-slate-900 text-white">Sélectionner un service...</option>
+                <option class="bg-slate-900 text-white">Recherche de fuite</option>
+                <option class="bg-slate-900 text-white">Chauffe-eau</option>
+                <option class="bg-slate-900 text-white">Douche / salle de bain</option>
+                <option class="bg-slate-900 text-white">WC / robinetterie</option>
+                <option class="bg-slate-900 text-white">Dépannage plomberie</option>
+                <option class="bg-slate-900 text-white">VMC</option>
+                <option class="bg-slate-900 text-white">Autre</option>
               </select>
             </div>
 
@@ -840,7 +764,7 @@
               <textarea rows="5" placeholder="Décrivez votre besoin en quelques lignes..." class="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent-500 resize-none"></textarea>
             </div>
 
-            <button type="submit" class="w-full btn-primary text-white font-bold py-4 rounded-2xl transition-all duration-200">
+            <button type="button" class="w-full btn-primary text-white font-bold py-4 rounded-2xl transition-all duration-200">
               Envoyer ma demande
             </button>
             <p class="text-white/40 text-xs text-center">Réponse rapide · Devis gratuit · Aucun engagement</p>
@@ -910,18 +834,18 @@
             </div>
           </div>
           <p class="text-white/60 text-sm leading-relaxed">
-            Landing page premium, locale, SEO-friendly et mobile-first pour convertir sur des recherches liées à la plomberie dans le Rhône [file:16].
+            Votre artisan plombier de confiance à Saint-Didier-au-Mont-d'Or et alentours, pour des interventions rapides, soignées et garanties.
           </p>
         </div>
 
         <div>
           <h3 class="font-bold mb-4">Navigation</h3>
           <ul class="space-y-2 text-sm text-white/65">
-            <li><a href="#services" class="hover:text-white">Services</a></li>
+            <li><a href="#services" class="hover:text-white">Nos services</a></li>
             <li><a href="#zones" class="hover:text-white">Zone d’intervention</a></li>
-            <li><a href="#avis" class="hover:text-white">Avis</a></li>
-            <li><a href="#faq" class="hover:text-white">FAQ</a></li>
-            <li><a href="#contact" class="hover:text-white">Contact</a></li>
+            <li><a href="#avis" class="hover:text-white">Avis clients</a></li>
+            <li><a href="#faq" class="hover:text-white">Questions fréquentes</a></li>
+            <li><a href="#contact" class="hover:text-white">Contact & Devis</a></li>
           </ul>
         </div>
 
@@ -939,7 +863,6 @@
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/45">
         <p>© 2026 Thévenet Plomberie. Tous droits réservés.</p>
-        <p>Site vitrine artisan plombier · Optimisé mobile et SEO</p>
       </div>
     </div>
   </footer>
@@ -955,8 +878,9 @@
     const navbar = document.getElementById('navbar');
     const reveals = document.querySelectorAll('.reveal');
 
+    // On scroll, add background to navbar (value 40px corresponds to the topbar height)
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 24) {
+      if (window.scrollY > 40) {
         navbar.classList.add('nav-scrolled');
       } else {
         navbar.classList.remove('nav-scrolled');
